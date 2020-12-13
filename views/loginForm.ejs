@@ -1,0 +1,140 @@
+<%- include('./partial/header'); -%>
+<div class="row">
+  <div class="col-sm-8 font" style="margin: 20px 0px;">
+    <a href="/uploads/IDCLAdvt10.11.2020.pdf" class="btn btn-warning">Download Detailed Notification</a>
+    <h3 style="margin: 30px;"><%= advt %></h3>
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th scope="col">SR.</th>
+          <th scope="col">Schedules for Events</th>
+          <th scope="col">Dates</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Start Date of Online Registration and submission of application</td>
+          <td>12/11/2020</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Last Date of Online Registration and submission of application</td>
+          <td>03/12/2020</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Last Date of Online Fee Payment</td>
+          <td>03/12/2020</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Admit Card Available</td>
+          <td>Last week of March 2021</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>Exam Date</td>
+          <td>After 2 weeks of Admit Card</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>DETAILS OF POSTS</h3>
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr>
+          <th rowspan="2">Name of Post (Pay Level)</th>
+          <th rowspan="2">Age Limit</th>
+          <th colspan="6">No. of Vacancies</th>
+          <th rowspan="2">Eligibility</th>
+        </tr>
+        <tr>
+          <td>UR</td>
+          <td>OBC</td>
+          <td>SC</td>
+          <td>ST</td>
+          <td>EWS</td>
+          <td>TOTAL</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= postName %></td>
+          <td><%= ageLimit %></td>
+          <td><%= UR %></td>
+          <td><%= OBC %></td>
+          <td><%= SC %></td>
+          <td><%= ST %></td>
+          <td><%= EWS %></td>
+          <td><%= Total %></td>
+          <td><%= Eligibility %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>APPLICATION FEE:</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>S.No.</th>
+          <th>Category</th>
+          <th>Application Fee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>GEN/EWS/OBC</td>
+          <td>&#8377; 230</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>SC/ST/FEMALE/PWD</td>
+          <td>&#8377; 140</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td colspan="2">*Bank/ Transaction Charges are to be borne by the candidate.</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td colspan="2">Note I: Applications without the prescribed Fee/ Intimation Charges shall be summarily
+            rejected.</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td colspan="2">Note II: Fee once paid shall not be refunded under any circumstances nor can the fee be held
+            in reserve for any other examination or selection.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="col-sm-4 font" style="margin: 20px 0px;">
+    <div class="card border-success">
+      <div class="card-header bg-success text-white text-center">Login Already Registered</div>
+      <div class="card-body">
+        <% if(message.length > 0){ %>
+        <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+        <form action="/loginForm" method="POST">
+          <div class="form-group">
+            <label class="col-form-label col-form-label-lg" for="inputLarge">Email</label>
+            <input class="form-control form-control-lg" type="text" name="email" placeholder="Enter Email" id="email"
+              required>
+          </div>
+          <div class="form-group">
+            <label class="col-form-label col-form-label-lg" for="inputLarge">Password</label>
+            <input class="form-control form-control-lg" type="password" name="password" placeholder="Enter Password"
+              id="password" required>
+          </div>
+          <button type="submit" class="btn btn-success btn-lg">Login</button>
+        </form>
+      </div>
+    </div>
+    <div style="margin: 10px;">
+      <a href="\instructionPage" class="btn btn-danger btn-lg">Click Here For New Registration</a>
+    </div>
+  </div>
+</div>
+<%- include('./partial/footer'); -%>

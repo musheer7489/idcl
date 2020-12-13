@@ -1,0 +1,670 @@
+<%- include('./partial/header'); -%>
+<div class="container register">
+    <% if(message.length > 0){ %>
+    <div class="alert alert-danger text-center"> <strong><%= message %></strong></div>
+    <% }%>
+    <form action="registerForm" method="POST" onsubmit="return validateForm()" name="regForm" class="was-validated"
+        enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="ApplicationMode"><strong> <span class="star">*</span>Select the Post applying for
+                    :</strong></label>
+            <select class="custom-select" name="post" id="post" required>
+                <option value="">..Select..</option>
+                <option value="Junior Assistant Grade-I (Pay Level-4)">Junior Assistant Grade-I (Pay Level-4)</option>
+                <option value="Technical Officer (Pay Level-7)">Technical Officer (Pay Level-7) </option>
+                <option value="Assistant (Pay Level-6)">Assistant (Pay Level-6) </option>
+                <option value="Assistant Review Officer (Pay Level-6)">Assistant Review Officer (Pay Level-6) </option>
+                <option value="Assistant Safety Officer (Pay Level-6)">Assistant Safety Officer (Pay Level-6) </option>
+                <option value="IT Assistant (Pay Level-6)">IT Assistant (Pay Level-6) </option>
+                <option value="Assistant Manager (Pay Level-7) ">Assistant Manager (Pay Level-7) </option>
+                <option value="Hindi Translator  (Pay Level-6) ">Hindi Translator (Pay Level-6) </option>
+            </select>
+            <div class="invalid-feedback">Please select the post for applying</div>
+
+        </div>
+
+        <div class="card  mb-3">
+            <div class="card-header text-white bg-danger">Primary Details</div>
+            <div class="card-body">
+                <div class="form-group row">
+                    <label for="nameApplicants" class="col-sm-3 col-form-label"> <span class="star">*</span><strong>Name
+                            of Applicant:</strong></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="name" id="nameApplicants"
+                            onkeyup="this.value = this.value.toUpperCase();" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="father" class="col-sm-3 col-form-label"> <span class="star">*</span><strong>Father's
+                            Name : </strong></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="fathername" id="father"
+                            onkeyup="this.value = this.value.toUpperCase();" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="mother" class="col-sm-3 col-form-label"> <span class="star">*</span><strong>Mother's
+                            Name : </strong> </label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="mothername" id="mother"
+                            onkeyup="this.value = this.value.toUpperCase();" required>
+                    </div>
+                </div>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-3 pt-0"><span class="star">*</span><strong>Gender
+                                :</strong></legend>
+                        <div class="col-sm-9">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="male" value="MALE"
+                                    required>
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="female" value="FEMALE">
+                                <label class="form-check-label" for="inlineRadio2">Female</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="transgender"
+                                    value="Trans Gender">
+                                <label class="form-check-label" for="inlineRadio2">Third Gender</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-3 pt-0"><span class="star">*</span><strong>Marital Status
+                                :</strong></legend>
+                        <div class="col-sm-9">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="maritalstatus" id="married"
+                                    value="MARRIED" required>
+                                <label class="form-check-label" for="inlineRadio1">Married</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="maritalstatus" id="unmarried"
+                                    value="SINGLE">
+                                <label class="form-check-label" for="inlineRadio2">Unmarried
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <label for="spouse" class="col-sm-3 col-form-label"><strong>Spouse Name :</strong></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="spousename" id="spouse"
+                            onkeyup="this.value = this.value.toUpperCase();">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="nationality" class="col-sm-3 col-form-label"><strong>Nationality :</strong></label>
+                    <div class="col-sm-9">
+                        <input type="text" readonly class="form-control-plaintext" name="nationality" id="nationality"
+                            value="INDIAN">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="spouse" class="col-sm-3 col-form-label"><strong> <span class="star">*</span>Mother
+                            Tongue :</strong></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="mothertongue" id="mother-tongue"
+                            onkeyup="this.value = this.value.toUpperCase();" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="spouse" class="col-sm-3 col-form-label"><strong> <span
+                                class="star">*</span>Identification Mark
+                            :</strong></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="identitymark" id="identity-mark"
+                            onkeyup="this.value = this.value.toUpperCase();" required>
+                    </div>
+                </div>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-3 pt-0"><span class="star">*</span><strong>Category :
+                                :</strong></legend>
+                        <div class="col-sm-9">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="category" id="inlineRadio1"
+                                    value="UR" required>
+                                <label class="form-check-label" for="inlineRadio1">UR</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="category" id="inlineRadio2"
+                                    value="OBC-Non Creamy Layer">
+                                <label class="form-check-label" for="inlineRadio2">OBC-Non Creamy Layer
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="category" id="inlineRadio2"
+                                    value="SC">
+                                <label class="form-check-label" for="inlineRadio2">SC
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="category" id="inlineRadio2"
+                                    value="ST">
+                                <label class="form-check-label" for="inlineRadio2">ST
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <label for="spouse" class="col-sm-3 col-form-label"><span class="star">*</span><strong>Religion
+                            :</strong></label>
+                    <div class="col-sm-9">
+                        <select class="custom-select" name="religion" id="religion" required>
+                            <option value=""> Select </option>
+                            <option value="HINDU">HINDU</option>
+                            <option value="MUSLIM">MUSLIM</option>
+                            <option value="CHRISTIAN">CHRISTIAN</option>
+                            <option value="BUDHISM">BUDHISM</option>
+                            <option value="JAIN">JAIN</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-3 pt-0"><span class="star">*</span><strong>Do you possess
+                                Economically Weaker Section (EWS) certificate?
+                                :</strong></legend>
+                        <div class="col-sm-9">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="ews" id="inlineRadio1" value="Yes"
+                                    required>
+                                <label class="form-check-label" for="inlineRadio1">YES</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="ews" id="inlineRadio2" value="No">
+                                <label class="form-check-label" for="inlineRadio2">NO
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-3 pt-0"><span class="star">*</span><strong>Are you more
+                                than 40% physically disabled ?
+                                :</strong></legend>
+                        <div class="col-sm-9">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="disability" id="inlineRadio1"
+                                    value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">YES</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="disability" id="inlineRadio2"
+                                    value="No">
+                                <label class="form-check-label" for="inlineRadio2">NO
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <label for="spouse" class="col-sm-3 col-form-label"><strong>Type of Disability
+                            :</strong></label>
+                    <div class="col-sm-9">
+                        <select class="custom-select" name="typesofdisability">
+                            <option selected> Select </option>
+                            <option value="Deaf and Dumb">Deaf and Dumb</option>
+                            <option value="Locomotive">Locomotive</option>
+                            <option value="Blindness">Blindness</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="spouse" class="col-sm-3 col-form-label"><strong>If other, specify type of disability
+                            :</strong></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="otherdisability" id="disability">
+                    </div>
+                </div>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-3 pt-0"><span class="star">*</span><strong>Were you a
+                                domiciled in Jammu and Kashmir between 01.01.1980 and 31.12.1989 ?
+                                :</strong></legend>
+                        <div class="col-sm-9">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="jkDomicile" id="inlineRadio1"
+                                    value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">YES</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="jkDomicile" id="inlineRadio2"
+                                    value="No">
+                                <label class="form-check-label" for="inlineRadio2">NO
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-3 pt-0"><span class="star">*</span><strong>Are you an
+                                ExServiceman ?
+                                :</strong></legend>
+                        <div class="col-sm-9">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="exserviceman" id="exserviceman"
+                                    value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">YES</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="exserviceman" id="exserviceman"
+                                    value="No">
+                                <label class="form-check-label" for="inlineRadio2">NO
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <label for="nameApplicants" class="col-sm-3 col-form-label"> <span
+                            class="star">*</span><strong>Mobile
+                            No.:</strong></label>
+                    <div class="col-sm-9">
+                        <input type="number" min="1000000000" max="9999999999" class="form-control" name="mobilenumber"
+                            id="nameApplicants" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="nameApplicants" class="col-sm-3 col-form-label"> <span
+                            class="star">*</span><strong>Aadhar
+                            No.:</strong></label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" name="aadhar" id="nameApplicants" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-3 col-form-label"> <span class="star">*</span><strong>Email ID
+                            :</strong></label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" name="email" id="email" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-3 col-form-label"> <span class="star">*</span><strong>Confirm
+                            Email ID :</strong></label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" name="confirmemail" id="confirmemail" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="password" class="col-sm-3 col-form-label"> <span class="star">*</span><strong>Choose
+                            Password :</strong></label>
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" name="password" id="password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                        <div id="pwdmessage">
+                            <h5>Password must contain the following:</h5>
+                            <p id="letter" class="pwdinvalid">A <b>lowercase</b> letter</p>
+                            <p id="capital" class="pwdinvalid">A <b>capital (uppercase)</b> letter</p>
+                            <p id="number" class="pwdinvalid">A <b>number</b></p>
+                            <p id="length" class="pwdinvalid">Minimum <b>8 characters</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="password" class="col-sm-3 col-form-label"> <span class="star">*</span><strong>Confirm
+                            Password :</strong></label>
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" name="confirmpassword" id="confirmpassword"
+                            required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-3 col-form-label"> <span class="star">*</span><strong>
+                            Date of Birth :</strong></label>
+                    <div class="col-sm-9">
+                        <input type="date" name="dob" id="dob" class="form-control" min="1990-01-01" max="2002-01-01"
+                            required>
+
+                    </div>
+                </div>
+                <div class="card ">
+                    <div class="card-header bg-danger mb-3 text-white">Communication Details</div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="mother" class="col-sm-3 col-form-label"> <span
+                                    class="star">*</span><strong>Address</strong> </label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="address" id="address"
+                                    onkeyup="this.value = this.value.toUpperCase();" required>
+                            </div>
+                            <label for="mother" class="col-sm-3 col-form-label"> <span
+                                    class="star">*</span><strong>District</strong> </label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="district" id="district"
+                                    onkeyup="this.value = this.value.toUpperCase();" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="mother" class="col-sm-3 col-form-label"> <span
+                                    class="star">*</span><strong>State</strong> </label>
+                            <div class="col-sm-3">
+                                <select class="custom-select" name="state" id="state" required>
+                                    <option value="">Select</option>
+                                    <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
+                                    <option value="Andaman and Nicobar Islands (UT)">Andaman and Nicobar Islands (UT)
+                                    </option>
+                                    <option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option>
+                                    <option value="ASSAM">ASSAM</option>
+                                    <option value="BIHAR">BIHAR</option>
+                                    <option value="CHANDIGARH (UT)">CHANDIGARH (UT)</option>
+                                    <option value="CHHATTISGARH">CHHATTISGARH</option>
+                                    <option value="DADAR &amp; NAGAR HAVELI (UT)">DADAR &amp; NAGAR HAVELI (UT)</option>
+                                    <option value="DAMAN &amp; DIU (UT)">DAMAN &amp; DIU (UT)</option>
+                                    <option value="DELHI">DELHI</option>
+                                    <option value="GOA">GOA</option>
+                                    <option value="GUJARAT">GUJARAT</option>
+                                    <option value="HARYANA">HARYANA</option>
+                                    <option value="HIMACHAL PRADESH">HIMACHAL PRADESH</option>
+                                    <option value="JAMMU and KASHMIR">JAMMU &amp; KASHMIR</option>
+                                    <option value="JHARKHAND">JHARKHAND</option>
+                                    <option value="KARNATAKA">KARNATAKA</option>
+                                    <option value="KERALA">KERALA</option>
+                                    <option value="Ladakh (UT)">Ladakh (UT)</option>
+                                    <option value="LAKSHADWEEP (UT)">LAKSHADWEEP (UT)</option>
+                                    <option value="MADHYA PRADESH">MADHYA PRADESH</option>
+                                    <option value="MAHARASTRA">MAHARASTRA</option>
+                                    <option value="MANIPUR">MANIPUR</option>
+                                    <option value="MEGHALAYA">MEGHALAYA</option>
+                                    <option value="MIZORAM">MIZORAM</option>
+                                    <option value="NAGALAND">NAGALAND</option>
+                                    <option value="ODISHA">ODISHA</option>
+                                    <option value="PUDUCHERRY (UT)">PUDUCHERRY (UT)</option>
+                                    <option value="PUNJAB">PUNJAB</option>
+                                    <option value="RAJASTHAN">RAJASTHAN</option>
+                                    <option value="SIKKIM">SIKKIM</option>
+                                    <option value="TAMIL NADU">TAMIL NADU</option>
+                                    <option value="TELANGANA">TELANGANA</option>
+                                    <option value="TRIPURA">TRIPURA</option>
+                                    <option value="UTTAR PRADESH">UTTAR PRADESH</option>
+                                    <option value="UTTARAKHAND">UTTARAKHAND</option>
+                                    <option value="WEST BENGAL">WEST BENGAL</option>
+                                </select>
+                            </div>
+                            <label for="pincode" class="col-sm-3 col-form-label"> <span class="star">*</span><strong>Pin
+                                    Code</strong> </label>
+                            <div class="col-sm-3">
+                                <input type="Number" class="form-control" name="pincode" min="100000" max="999999"
+                                    id="pincode" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card ">
+                    <div class="card-header bg-danger mb-3 text-white">Educational Details</div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name of Course</th>
+                                    <th scope="col">Board/University Name</th>
+                                    <th scope="col">Passing Year</th>
+                                    <th scope="col">Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td><input type="text" readonly class="form-control-plaintext" name="highschool"
+                                            id="highschool" value="High School"></td>
+                                    <td><input type="text" class="form-control" name="hboardname" id="hboardname"
+                                            onkeyup="this.value = this.value.toUpperCase();" required>
+                                    </td>
+
+                                    <td><input type="Number" class="form-control" name="hyear" id="hyear" required>
+                                    </td>
+
+                                    <td><input type="text" value="" class="form-control" name="hpercentage"
+                                            id="hpercentage" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td><input type="text" readonly class="form-control-plaintext" name="intermediate"
+                                            id="intermediate" value="InterMediate"></td>
+                                    <td><input type="text" class="form-control" name="iboardname" id="iboardname"
+                                            onkeyup="this.value = this.value.toUpperCase();" required>
+                                    </td>
+
+                                    <td><input type="Number" class="form-control" name="iyear" id="iyear" required>
+                                    </td>
+
+                                    <td><input type="text" class="form-control" name="ipercentage" id="ipercentage"
+                                            required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td><input type="text" readonly class="form-control-plaintext" name="graduation"
+                                            id="graduation" value="Graduation"></td>
+                                    <td><input type="text" class="form-control" name="gboardname" id="gboardname"
+                                            onkeyup="this.value = this.value.toUpperCase();">
+                                    </td>
+
+                                    <td><input type="Number" class="form-control" name="gyear" id="gyear">
+                                    </td>
+
+                                    <td><input type="text" class="form-control" name="gpercentage" id="gpercentage">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td><input type="text" readonly class="form-control-plaintext" name="postgraduation"
+                                            id="postgraduation" value="Post Graduation"></td>
+                                    <td><input type="text" class="form-control" name="pboardname" id="pboardname"
+                                            onkeyup="this.value = this.value.toUpperCase();">
+
+                                    <td><input type="Number" class="form-control" name="pyear" id="pyear">
+                                    </td>
+
+                                    <td><input type="text" class="form-control" name="ppercentage" id="ppercentage">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header bg-danger mb-3 text-white">Photo and Signature Upload</div>
+            <div class="card-body">
+                <div class="form-group row">
+                    <div class="col-sm-3"><span class="star">*</span><strong>Photo Upload</strong></div>
+                    <div class="col-sm-9">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="photo" name="photo" accept="image/*"
+                                required>
+                            <label class="custom-file-label" for="customFile">Choose Photo</label>
+                        </div>
+                        <img id="photoView" src="#" alt="Uploaded Photo" width="200px" />
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-3"><span class="star">*</span><strong>Signature Upload</strong></div>
+                    <div class="col-sm-9">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="signature" name="signature" required>
+                            <label class="custom-file-label" for="customFile">Choose Signature</label>
+                        </div>
+                        <img id="signatureView" src="#" alt="Signature" width="200px" height="100px" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header bg-danger mb-3 text-white">Examination Center</div>
+            <div class="card-body">
+                <div class="form-group row">
+                    <label for="spouse" class="col-sm-3 col-form-label"><span class="star">*</span><strong>Choose Exam
+                            center
+                            :</strong></label>
+                    <div class="col-sm-9">
+                        <select class="custom-select" name="examcenter" id="examcenter" required>
+                            <option value=""> Select </option>
+                            <option value="Agra">Agra</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                            <option value="Ajmer">Ajmer</option>
+                            <option value="Aligarh">Aligarh</option>
+                            <option value="Allahabad">Allahabad</option>
+                            <option value="Alwar">Alwar</option>
+                            <option value="Ambala">Ambala</option>
+                            <option value="Ambattur">Ambattur</option>
+                            <option value="Amravati">Amravati</option>
+                            <option value="Amritsar">Amritsar</option>
+                            <option value="Arrah">Arrah</option>
+                            <option value="Asansol">Asansol</option>
+                            <option value="Aurangabad">Aurangabad</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Bareilly">Bareilly</option>
+                            <option value="Belgaum">Belgaum</option>
+                            <option value="Bhavnagar">Bhavnagar</option>
+                            <option value="Bhilai Nagar">Bhilai Nagar</option>
+                            <option value="Bhiwandi">Bhiwandi</option>
+                            <option value="Bhopal">Bhopal</option>
+                            <option value="Bhubaneswar">Bhubaneswar</option>
+                            <option value="Bikaner">Bikaner</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Coimbatore">Coimbatore</option>
+                            <option value="Cuttack">Cuttack</option>
+                            <option value="Darbhanga">Darbhanga</option>
+                            <option value="Dehradun">Dehradun</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Dhanbad">Dhanbad</option>
+                            <option value="Durgapur">Durgapur</option>
+                            <option value="Faridabad">Faridabad</option>
+                            <option value="Firozabad">Firozabad</option>
+                            <option value="Gaya">Gaya</option>
+                            <option value="Ghaziabad">Ghaziabad</option>
+                            <option value="Gorakhpur">Gorakhpur</option>
+                            <option value="Gulbarga">Gulbarga</option>
+                            <option value="Gurgaon">Gurgaon</option>
+                            <option value="Guwahati">Guwahati</option>
+                            <option value="Gwalior">Gwalior</option>
+                            <option value="Haldwani">Haldwani</option>
+                            <option value="Haora">Haora</option>
+                            <option value="Haridwar">Haridwar</option>
+                            <option value="Hubli and dharwad">Hubli and dharwad</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Indore">Indore</option>
+                            <option value="Jabalpur">Jabalpur</option>
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Jalandhar">Jalandhar</option>
+                            <option value="Jalgaon">Jalgaon</option>
+                            <option value="Jammu">Jammu</option>
+                            <option value="Jamnagar">Jamnagar</option>
+                            <option value="Jamshedpur">Jamshedpur</option>
+                            <option value="Jodhpur">Jodhpur</option>
+                            <option value="Kalyan & Dombivali">Kalyan & Dombivali</option>
+                            <option value="Kanpur">Kanpur</option>
+                            <option value="Kochi">Kochi</option>
+                            <option value="Kolapur">Kolapur</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Kollam">Kollam</option>
+                            <option value="Kota">Kota</option>
+                            <option value="Latur">Latur</option>
+                            <option value="Loni">Loni</option>
+                            <option value="Lucknow">Lucknow</option>
+                            <option value="Ludhiana">Ludhiana</option>
+                            <option value="Madurai">Madurai</option>
+                            <option value="Maheshtala">Maheshtala</option>
+                            <option value="Malegaon">Malegaon</option>
+                            <option value="Mangalore">Mangalore</option>
+                            <option value="Meerut">Meerut</option>
+                            <option value="Mira and Bhayander">Mira and Bhayander</option>
+                            <option value="Moradabad">Moradabad</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Muzaffarpur">Muzaffarpur</option>
+                            <option value="MuzaffarNagar">MuzaffarNagar</option>
+                            <option value="Mysore">Mysore</option>
+                            <option value="Nagpur">Nagpur</option>
+                            <option value="Nanded Waghala">Nanded Waghala</option>
+                            <option value="Nashik">Nashik</option>
+                            <option value="Navi Mumbai">Navi Mumbai</option>
+                            <option value="Nellore">Nellore</option>
+                            <option value="Noida">Noida</option>
+                            <option value="Patna">Patna</option>
+                            <option value="Pimpri & Chinchwad">Pimpri & Chinchwad</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Raipur">Raipur</option>
+                            <option value="Rajkot">Rajkot</option>
+                            <option value="Ranchi">Ranchi</option>
+                            <option value="Saharanpur">Saharanpur</option>
+                            <option value="Salem">Salem</option>
+                            <option value="Sangli  Miraj Kupwad">Sangli Miraj Kupwad</option>
+                            <option value="Satna">Satna</option>
+                            <option value="Shilong">Shilong</option>
+                            <option value="Siliguri">Siliguri</option>
+                            <option value="Solapur">Solapur</option>
+                            <option value="Srinagar">Srinagar</option>
+                            <option value="Surat">Surat</option>
+                            <option value="Thane">Thane</option>
+                            <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                            <option value="Tiruchirappalli">Tiruchirappalli</option>
+                            <option value="Tirunelveli">Tirunelveli</option>
+                            <option value="Udaipur">Udaipur</option>
+                            <option value="Ujjain">Ujjain</option>
+                            <option value="Ulhasnagar">Ulhasnagar</option>
+                            <option value="Vadodara">Vadodara</option>
+                            <option value="Varanasi">Varanasi</option>
+                            <option value="Vasai Virar">Vasai Virar</option>
+                            <option value="Vijayawada">Vijayawada</option>
+                            <option value="Visakhapatnam">Visakhapatnam</option>
+                            <option value="Warangal">Warangal</option>
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header bg-danger mb-3 text-white"> Submit Details</div>
+            <div class="card-body">
+                <div class="form-group row">
+                    <div class="col-sm-3"><strong>Verify You are Human</strong></div>
+                    <div class="col-sm-9">
+                        <div class="capt">
+                            <div class="row">
+                                <h2 type="text" id="mainCaptcha"></h2>
+                                <p><input type="button" value="Refresh Text" class="btn btn-warning"
+                                        onclick="CaptchaReload();" /></p>
+                            </div>
+                            <input type="text" class="form-control" id="txtInput" placeholder="Enter Above Text Here"
+                                required />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-3"><span class="star">*</span><strong>Terms and Conditions</strong></div>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck1" required>
+                            <label class="form-check-label" for="gridCheck1">
+                                I Agree, All details filled, correct in my knowledge.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-lg-12 text-center">
+                    <button type="submit" class="btn btn-primary" onclick="ValidCaptcha();">Final Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<%- include('./partial/footer'); -%>

@@ -1,0 +1,130 @@
+.font {
+  font-family: "Ubuntu", sans-serif;
+  /* font-family: "Muli-Bold"; */
+}
+.logo img {
+  height: 77px;
+  width: 140px;
+}
+.footer a {
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+}
+.footer a:hover {
+  font-family: "Ubuntu", sans-serif;
+  color: rgba(173, 173, 173);
+  text-decoration: none;
+}
+.middle-card ul li {
+  font-size: small;
+}
+.counter-item {
+  background-color: rgb(104, 100, 100);
+  padding: 5px;
+}
+.career_occardian {
+  margin-top: 30px;
+}
+.data_wrapper {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  padding: 20px;
+}
+.data_wrapper a {
+  color: #1f71b9 !important;
+  font-weight: 800;
+  padding: 10px 0px;
+  cursor: pointer;
+}
+.new_span {
+  background: red;
+  padding: 2px 5px;
+  color: #fff;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.apply_online {
+  background: #1f71b9;
+  color: #fff;
+  padding: 5px 20px;
+  display: block;
+  width: 245px;
+  margin-top: 20px;
+  text-align: center;
+}
+.heading-1 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0px;
+  color: white;
+  background: rgb(63, 4, 119);
+  padding: 10px 20px;
+}
+
+/* #nameApplicants, #father, #mother, #spouse, #mother-tongue, #address, #district, #hboardname, #iboardname{
+  text-transform: uppercase;
+} */
+
+#pwdmessage {
+  display: none;
+  /* background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px; */
+  line-height: 0.7rem;
+}
+#pwdmessage p {
+  padding: 0px 35px;
+  font-size: 15px;
+}
+.pwdvalid {
+  color: green;
+}
+.pwdvalid:before {
+  position: relative;
+  left: -35px;
+  content: "\2714";
+}
+.pwdinvalid {
+  color: red;
+}
+
+.pwdinvalid:before {
+  position: relative;
+  left: -35px;
+  content: "\2716";
+}
+.govimg {
+  justify-content: space-around;
+  margin: 20px 10px;
+}
+.govimg img {
+  height: 100px;
+  width: 170px;
+}
+.viewForm::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background-image: url("/images/idcl.png");
+}
+
+/* Captcha */
+#mainCaptcha {
+  width: 210px;
+  background-color: rgba(37, 138, 11, 0.5);
+  padding: 10px;
+  margin: 0px 15px 15px 15px;
+}
+
+.capt {
+  height: 10rem;
+  width: 24rem;
+  background-color: rgb(223, 223, 223);
+  padding: 20px;
+}

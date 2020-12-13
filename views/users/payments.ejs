@@ -1,0 +1,35 @@
+<form action="./pay" method="POST">
+    <% if((category ==="OBC-Non Creamy Layer" || category === "UR") && gender === "MALE" && disability === "No"){ %>
+        <script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        data-key="rzp_test_ODjxbpVFuELe1g" 
+        data-amount="23000" 
+        data-currency="INR"
+        data-order_id="<%= order_id %>"
+        data-buttontext="Click To Proceed Payment"
+        data-name="IDCL India"
+        data-description="Industrial Developement Corporation of India"
+        data-image="/images/idcl.png"
+        data-prefill.name=""
+        data-prefill.email=""
+        data-theme.color="#F37254"
+    ></script>
+    <% } %>
+    <% if(category ==="SC" || category === "ST" || gender === "FEMALE" || disability === "Yes"){ %>
+        <script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        data-key="rzp_test_ODjxbpVFuELe1g" 
+        data-amount="14000" 
+        data-currency="INR"
+        data-order_id="<%= order_id %>"
+        data-buttontext="Click To Proceed Payment"
+        data-name="IDCL India"
+        data-description="Industrial Developement Corporation of India"
+        data-image="/images/idcl.png"
+        data-prefill.name=""
+        data-prefill.email=""
+        data-theme.color="#F37254"
+    ></script>
+    <% } %>
+    <input type="hidden" custom="Hidden Element" name="hidden">
+    </form>

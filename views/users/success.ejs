@@ -1,0 +1,26 @@
+<%- include('../partial/header'); -%>
+<div class="card border-success" style="margin: auto; width: 40rem;">
+    <div class="card-header bg-success text-white">Success Message</div>
+    <div class="card-body text-center">
+        <h3>You are Successfully Registered </h3>
+        <p>Your Email : <strong><%= email %></strong></p>
+        <p>Your Registration Number: <strong><%= RegistrationNo %></strong></p>
+        <p>Now Click on the <strong>Pay Now</strong> Button to Complete Application</p>
+
+        <div class="row" style="justify-content: space-around;">
+            <div>
+                <% if((category ==="OBC-Non Creamy Layer" || category === "UR") && gender === "MALE" && disability === "No"){ %>
+                    <a href="./payments" class="btn btn-warning">Pay Now &#8377; 230</a>
+                    <% } %>
+                    <% if(category ==="SC" || category === "ST" || gender === "FEMALE" || disability === "Yes"){ %>
+                    <a href="./payments" class="btn btn-warning">Pay Now &#8377; 140</a>
+                    <% } %>
+            </div>
+
+            <div> <a href="./" class="btn btn-warning">Login</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<%- include('../partial/footer'); -%>

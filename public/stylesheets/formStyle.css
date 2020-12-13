@@ -1,0 +1,50 @@
+input.invalid {
+    background-color: #ffdddd;
+  }
+  .tab {
+    display: none;
+  }
+  .step {
+    height: 25px;
+    width: 25px;
+    margin: 0 2px;
+    background-color: #bd3232;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    opacity: 0.3;
+  }
+  .step.active {
+    opacity: 1;
+  }
+  /* .step.finish {
+    background-color: #37ce24d5;
+    opacity: 1;
+  } */
+  #nextBtn{
+      margin: 20px 10px;
+      padding: 10px 15px 10px 40px;
+      outline: none;
+      background: rgb(250, 168, 17);
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 25px;
+      border: none;
+  }
+
+  #prevBtn{
+    margin: 20px 10px;
+    padding: 10px 15px 10px 40px;
+    outline: none;
+    background: rgb(98, 100, 100);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 25px;
+    border: none;
+  }
+  .star{
+    color: red;
+  }
+

@@ -1,0 +1,25 @@
+<%- include('../partial/header'); -%>
+
+<div class="col-sm-4" style="margin: 20px auto;">
+    <div class="card border-danger">
+        <div class="card-header bg-danger text-white">Login Already Registered Candidate</div>
+        <div class="card-body">
+            <% if(message.length > 0){ %>
+              <div class="alert alert-danger"><%= message %></div>
+            <% } %>
+              <form action="/loginForm" method="POST">
+                  <div class="form-group">
+                      <label class="col-form-label col-form-label-lg" for="inputLarge">Email</label>
+                      <input class="form-control form-control-lg" type="text" name="email" placeholder="Enter Email" id="email" required>
+                    </div>
+                  <div class="form-group">
+                      <label class="col-form-label col-form-label-lg" for="inputLarge">Password</label>
+                      <input class="form-control form-control-lg" type="password" name="password" placeholder="Enter Password" id="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-lg">Login</button>
+              </form>
+          </div>
+    </div>
+</div>
+
+<%- include('../partial/footer'); -%>

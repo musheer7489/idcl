@@ -1,0 +1,260 @@
+<%- include('../partial/header'); -%>
+<div class="profile-data">
+    <div class="card">
+        <div class="card-header">
+            <a href="./logout" class="btn btn-warning" style="float: right;">Logout</a>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#primary-mb">Personal Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#contact-mb">Communication Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#educational-mb">Educational Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#payment-mb">Payment Details</a>
+                </li>
+                <% if(id){ %>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#print-mb">Application Print</a>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active show" id="primary-mb">
+                <div class="card-body">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <td colspan="2"><img src="../<%= photo %>" alt="Photo" height="120px" width="120px">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td colspan="2"><img src="../<%= signature %>" alt="signature" height="40px"
+                                        width="120px"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Registration number: </strong></td>
+                                <td><%= RegistrationNo %></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Applied For The Post: </strong></td>
+                                <td><%= post %></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Name Of Applicant</strong></td>
+                                <td><%= name %></td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Father's Name</strong></td>
+                                <td><%= fathername %></td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Mother's Name</strong></td>
+                                <td> <%= mothername %></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td><strong>Marital Status</strong></td>
+                                <td><%= maritalstatus %></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gender</strong></td>
+                                <td><%= gender %></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Date of Birth</strong></td>
+                                <td><%= dob %></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aadhar Number</strong></td>
+                                <td><%= aadhar %></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Identification Mark</strong></td>
+                                <td><%= identitymark %></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aadhar Number</strong></td>
+                                <td><%= aadhar %></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Were you a domiciled in <br> Jammu and Kashmir between <br> 01.01.1980 and
+                                        31.12.1989 ? </strong></td>
+                                <td><%= jkDomicile %></td>
+
+                            </tr>
+                            <tr>
+                                <td><strong>Mother Tongue</strong></td>
+                                <td><%= mothertongue %></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Identityfication Mark</strong></td>
+                                <td><%= identitymark %></td>
+
+                            </tr>
+                            <tr>
+                                <td><strong>Physical Disability</strong></td>
+                                <td><%= disability %></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Category</strong></td>
+                                <td><%= category %></td>
+
+                            </tr>
+                            <tr>
+                                <td><strong>Are you an ExServiceman ?</strong></td>
+                                <td><%= exserviceman %></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade middle-card" id="contact-mb">
+                <div class="card-body">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <td><strong>Email ID: </strong></td>
+                                <td><%= email %></td>
+
+                            </tr>
+                            <tr>
+                                <td><strong>Mobile Number: </strong></td>
+                                <td><%= mobilenumber %></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Address: </strong></td>
+                                <td><%= address %></td>
+
+                            </tr>
+                            <tr>
+                                <td><strong>District: </strong></td>
+                                <td><%= district %></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Domicile State:</strong> </td>
+                                <td><%= state %></td>
+
+                            </tr>
+                            <tr>
+                                <td><strong>Pin Code: </strong></td>
+                                <td><%= pincode %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade middle-card" id="educational-mb">
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name of Course</th>
+                                <th scope="col">Board/University Name</th>
+                                <th scope="col">Passing Year</th>
+                                <th scope="col">Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>HighSchool</td>
+                                <td><%= hboardname %></td>
+                                <td><%= hyear %></td>
+                                <td><%= hpercentage %></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Intermediate</td>
+                                <td><%= iboardname %></td>
+                                <td><%= iyear %></td>
+                                <td><%= ipercentage %></td>
+                            </tr>
+                            <% if(gboardname.length > 0){ %>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Graduation</td>
+                                <td><%= gboardname %></td>
+                                <td><%= gyear %></td>
+                                <td><%= gpercentage %></td>
+                            </tr>
+                            <%}%>
+                            <% if (pboardname.length > 0) { %>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Post Graduation</td>
+                                <td><%= pboardname %></td>
+                                <td><%= pyear %></td>
+                                <td><%= ppercentage %></td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade last-card" id="payment-mb">
+                <div class="card-body">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Payment Mode</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Payment Amount</th>
+                                <th scope="col">Payment Status</th>
+                                <th scope="col">Payment ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><%= method %></td>
+                                <td><%= category %></td>
+                                <td><% if((category ==="OBC-Non Creamy Layer" || category === "UR") && gender === "MALE" && disability === "No"){ %>
+                                    &#8377; 230
+                                    <% } %>
+                                    <% if(category ==="SC" || category === "ST" || gender === "FEMALE" || disability === "Yes"){ %>
+                                    &#8377; 140
+                                    <% } %>
+                                </td>
+                                <td class="bg-success text-white"><strong><%= status %></strong></td>
+                                <td>
+                                    <% if(id){ %>
+                                    <%= id %>
+                                    <% } %>
+
+                                    <% if(!id){ %>
+                                    <% if((category ==="OBC-Non Creamy Layer" || category === "UR") && gender === "MALE" && disability === "No"){ %>
+                                    <a href="./payments/UR" class="btn btn-warning">Pay Now &#8377; 230</a>
+                                    <% } %>
+
+                                    <% if(category ==="SC" || category === "ST" || gender === "FEMALE" || disability === "Yes"){ %>
+                                    <a href="./payments/SC" class="btn btn-warning">Pay Now &#8377; 140</a>
+                                    <% } %>
+
+                                    <% } %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="print-mb">
+                <div class="card-body">
+                    <a href="./viewForm" class="btn btn-warning">View and Print</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partial/footer'); -%>
